@@ -16,7 +16,7 @@ function List() {
   const updateTodo = (todoId, newValue) => {
     setTodos((prev) =>
       prev.map((item) => {
-        return item.id === todoId ? { ...item, text: newValue } : item;
+        return item.id === todoId ? newValue : item;
       })
     );
   };
