@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Form({onSubmit}) {
   const [input, setInput] = useState("");
 
+
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+      inputRef.current.focus();
+    })
 
     const hanleChange = (e) => {
         setInput(e.target.value);
@@ -27,6 +33,7 @@ export default function Form({onSubmit}) {
         value={input}
         name="text"
         onChange={hanleChange}
+        ref={inputRef}
       />
 
       <button onClick={handleSubmit} className="form-button">Додати</button>
