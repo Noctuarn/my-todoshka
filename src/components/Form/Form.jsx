@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
+import "./Form.scss"
+
 export default function Form({onSubmit}) {
   const [input, setInput] = useState("");
 
@@ -11,10 +13,11 @@ export default function Form({onSubmit}) {
     })
 
     const hanleChange = (e) => {
-        setInput(e.target.value);
+      setInput(e.target.value);
     }
 
     const handleSubmit = (e) => {
+
         e.preventDefault();
 
         onSubmit({
@@ -27,7 +30,7 @@ export default function Form({onSubmit}) {
 
   return (
     <form className="form">
-      <input
+      <input className="input"
         type="text"
         placeholder="Додайте нове завдання"
         value={input}

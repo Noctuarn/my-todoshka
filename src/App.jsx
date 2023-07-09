@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import List from './components/List/List'
 
 import './App.scss'
@@ -7,9 +5,9 @@ import './App.scss'
 function App() {
 
   return (
-    <>
+    <div className='main-body'>
       <List/>
-    </>
+    </div>
   ) 
 }
 

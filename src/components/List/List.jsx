@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Form from "../Form/Form";
 import Todo from "../Todo/Todo";
 
+import "./List.scss";
+
 function List() {
   const [todos, setTodos] = useState([]);
 
@@ -40,15 +42,17 @@ function List() {
   };
 
   return (
-    <div>
-      <h1>Що сьогодні варто зробити ?</h1>
+    <div className="todo-list">
+      <h1 className="main-title">Мої плани</h1>
       <Form onSubmit={addToDo} />
-      <Todo
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}
-      />
+      <div className="todos-wrapper">
+        <Todo
+          todos={todos}
+          completeTodo={completeTodo}
+          removeTodo={removeTodo}
+          updateTodo={updateTodo}
+        />
+      </div>
     </div>
   );
 }

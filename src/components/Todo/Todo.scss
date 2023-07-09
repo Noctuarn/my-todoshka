@@ -1,0 +1,49 @@
+@import "../../assets/values";
+
+.todo-row{
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 10px;
+    background: $purple-gradient;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+
+
+    &:nth-child(4n + 1) {
+        background: $purple-gradient;
+    }
+
+    &:nth-child(4n + 2) {
+        background: $orange-gradient;
+    }
+
+    &:nth-child(4n + 3) {
+        background: $blue-gradient;
+    }
+
+    &:nth-child(4n + 4) {
+        background: $pink-gradient;
+    }
+
+}
+
+.todos{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  
+    overflow-y: auto;
+    width: 100%;
+}
+
+.icons{
+    font-size: 1.6rem;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+
+    >*{
+        cursor: pointer;
+    }
+}

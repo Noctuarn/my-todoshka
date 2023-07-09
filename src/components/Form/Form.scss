@@ -1,0 +1,36 @@
+@import "../../assets/values";
+
+.form {
+  display: flex;
+  width: 80%;
+  border-radius: 10px;
+  border: 2px solid #570CFF;
+  overflow: hidden;
+  background: transparent;
+  margin: 20px 0 40px;
+}
+
+.input {
+  border: none;
+  background: transparent;
+  padding: 20px;
+  width: 80%;
+  outline: none;
+  font-size: .9rem;
+  font-weight: 600;
+
+  &::placeholder{
+    color: white;
+    font-size: .9rem;
+  }
+
+}
+
+.form-button {
+  width: 20%;
+  background: $purple-gradient;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}

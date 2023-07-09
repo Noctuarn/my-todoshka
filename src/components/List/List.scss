@@ -1,0 +1,24 @@
+@import "../../assets/values";
+
+.todo-list{
+    background: $list-bg;
+    border-radius: 20px;
+    width: 50%;
+    min-height: 500px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.main-title{
+    color: white;
+}
+
+.todos-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

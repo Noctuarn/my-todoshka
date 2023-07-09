@@ -3,6 +3,8 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { FaRegEdit } from "react-icons/fa";
 import Form from "../Form/Form";
 
+import "./Todo.scss"
+
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   const [edit, setEdit] = useState({
     id: null,
@@ -23,13 +25,13 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   }
 
   return (
-    <div>
+    <div className="todos">
       {todos.map((todo, index) => (
         <div
           className={todo.isComplete ? "todo-row complete" : "todo-row"}
           key={index}
         >
-          <div
+          <div 
             className=""
             key={todo.id}
             onClick={() => completeTodo(todo.id)}
