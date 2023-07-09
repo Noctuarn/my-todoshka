@@ -1,8 +1,11 @@
 @import "../../assets/values";
 
+.main-form{
+  width: 80%;
+}
+
 .form {
   display: flex;
-  width: 80%;
   border-radius: 10px;
   border: 2px solid #570CFF;
   overflow: hidden;
@@ -33,4 +36,12 @@
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
+}
+
+.edit-form{
+  border: 2px solid #FB6612;
+}
+
+.edit-button{
+  background: $orange-gradient;
 }

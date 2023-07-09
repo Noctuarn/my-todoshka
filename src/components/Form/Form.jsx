@@ -1,36 +1,53 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import "./Form.scss"
+import "./Form.scss";
 
-export default function Form({onSubmit}) {
-  const [input, setInput] = useState("");
+export default function Form({ onSubmit, edit }) {
+  const [input, setInput] = useState(edit ? edit.value : "");
 
+  const inputRef = useRef(null);
 
-    const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
-    useEffect(() => {
-      inputRef.current.focus();
-    })
+  const hanleChange = (e) => {
+    setInput(e.target.value);
+  };
 
-    const hanleChange = (e) => {
-      setInput(e.target.value);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const handleSubmit = (e) => {
+    onSubmit({
+      id: Math.floor(Math.random() * 10000),
+      text: input,
+    });
 
-        e.preventDefault();
-
-        onSubmit({
-            id: Math.floor(Math.random() * 10000),
-            text: input
-        })
-
-        setInput('');
-    }
+    setInput("");
+  };
 
   return (
-    <form className="form">
-      <input className="input"
+    <form className="main-form">
+    {edit ? (
+    <div className="form edit-form">
+      <input
+        className="input"
+        type="text"
+        placeholder="Оновіть свій елемент"
+        value={input}
+        name="text"
+        onChange={hanleChange}
+        ref={inputRef}
+      />
+
+      <button onClick={handleSubmit} className="form-button edit-button">
+        Оновити
+      </button>
+    </div>
+  ) : (
+    <div className="form">
+      <input
+        className="input"
         type="text"
         placeholder="Додайте нове завдання"
         value={input}
@@ -39,7 +56,11 @@ export default function Form({onSubmit}) {
         ref={inputRef}
       />
 
-      <button onClick={handleSubmit} className="form-button">Додати</button>
-    </form>
+      <button onClick={handleSubmit} className="form-button">
+        Додати
+      </button>
+    </div>
+  )}
+</form>
   );
 }
